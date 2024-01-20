@@ -1,7 +1,91 @@
 @use '../../style' as s;
 
-main {
-	background: s.color(dark);
-	color: s.color(light);
-	padding: s.space(4);
-} 
+.todolist-box {
+	display: flex;
+	padding: s.space(6);
+	flex-direction: column;
+	gap: s.space(6);
+
+	border-radius: s.space(3);
+	background: #FFF;
+	box-shadow: 0px 4px 17px 0px rgba(0, 0, 0, 0.10);
+
+	h1 {
+		color: #212529;
+		font-size: s.space(6);
+	}
+}
+
+.add-task-form {
+	display: flex;
+    gap: s.space(3);
+
+	input {
+		flex: 1 0 0;
+		padding: s.space(3) s.space(4);
+		border-radius: s.space(1);
+		border: 1px solid #CED4DA;
+	}
+
+	button {
+		padding: s.space(1) s.space(6);
+		text-align: center;
+		border-radius: s.space(1);
+		border: 1px solid #0D6EFD;
+		background: #0D6EFD;
+
+		color: #FFF;
+		font-size: s.space(4);
+	}
+}
+
+.todolist {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.task {
+	display: flex;
+	align-items: center;
+	gap: s.space(2);
+	padding: 12px 0;
+
+	span {
+		color: #212529;
+		font-size: s.space(4);
+		line-height: 150%;
+	}
+
+	border-bottom: 1px solid #D3DEE9;
+
+	&--done {
+		span {
+			color: #888;
+		}
+		.task__text {
+			text-decoration: line-through;
+		}
+	}
+}
+
+.task__text {
+	flex: 1;
+}
+
+.task__button {
+	width: 28px;
+	height: 28px;
+
+	display: flex;
+	padding: 8px;
+	gap: 10px;
+
+	border-radius: 70px;
+	border: 1px solid #909294;
+	background: #FFF;
+
+	&--done {
+		border-color: #008000;
+	}
+}
