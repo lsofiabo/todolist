@@ -1,13 +1,22 @@
-{{!
-Це код container файлу для index сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
-}}
+<main class='todolist-box'>
+	<h1>Todo List</h1>
+	<div class='add-task-form'>
+		<input type='text' placeholder='Add new task' />
+		<button id='add-task-button'>Add</button>
+	</div>
+	<ul class='todolist'>
+	</ul>
 
-<main>
-	{{>heading title="Index" info=data.test}}
+	<template id='task-template'>
+		<li class='task'>
+			<span>1. </span>
+			<span class='task__text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+			<button class='task__button'>
+				<img src='/svg/do.svg'>
+			</button>
+			<button class='task__button'>
+				<img src='/svg/delete.svg'>
+			</button>
+		</li>
+	</template>
 </main>
-
-{{!
-    Цей код містить лише те, що буде виводитись в <body>
-    Адже наш layout/default.hbs має вже структуру HTML
-}}
